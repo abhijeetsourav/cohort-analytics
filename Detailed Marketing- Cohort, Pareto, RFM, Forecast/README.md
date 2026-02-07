@@ -1,9 +1,3 @@
-Below is a **complete, production-ready `README.md`** tailored to your folder structure and project scope.
-
-You can copy-paste this directly as the root `README.md`.
-
----
-
 # Driving Repeat Revenue Through Customer Lifecycle Analytics
 
 ## Overview
