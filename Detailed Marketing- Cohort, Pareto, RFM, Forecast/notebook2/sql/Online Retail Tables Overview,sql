@@ -1,0 +1,28 @@
+SELECT 'online_retail' AS table_name, COUNT(*) AS rows FROM online_retail
+UNION ALL
+SELECT 'online_retail_final', COUNT(*) FROM online_retail_final;
+
+-- 6.1 — Preview rows
+SELECT * FROM online_retail LIMIT 10;
+
+-- 6.2 — Check NULLs in key fieldss
+SELECT
+  COUNT(*) AS total_rows,
+  COUNT("InvoiceNo") AS invoiceno_not_null,
+  COUNT("CustomerID") AS customerid_not_null
+FROM online_retail;
+
+
+-- 6.3 — Date format inspection
+SELECT "InvoiceDate"
+FROM online_retail
+LIMIT 10;
+
+
+SELECT
+  DATE("InvoiceDate") AS invoice_date,
+  ROUND(SUM("TotalPrice"), 2) AS daily_revenue
+FROM online_retail_final
+GROUP BY 1
+ORDER BY 1
+LIMIT 10;
